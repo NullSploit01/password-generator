@@ -1,14 +1,13 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import VueClipboard from 'vue-clipboard2';
 
-import App from './App.vue'
-import router from './router'
+VueClipboard.config.autoSetContainer = true; // add this line
+import App from './App.vue';
+import './assets/main.css';
+const app = createApp(App);
+app.use(VueClipboard);
 
-import './assets/main.css'
+app.use(createPinia());
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app.mount('#app');

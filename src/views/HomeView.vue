@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '@/components/TheWelcome.vue'
+import HeadingVue from '../components/Heading.vue';
+import RandomPasswordVue from '@/components/RandomPassword.vue';
+import { PasswordGenerator } from '../utils/RandomPasswordGenerator';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <HeadingVue heading="Password Generator" />
+    <RandomPasswordVue :randomPassword="PasswordGenerator()" />
   </main>
 </template>
