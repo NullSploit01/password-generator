@@ -1,31 +1,29 @@
 <template>
-  <div class="inputcontainer">
-    <h2 class="slider-heading">Length</h2>
-    <input type="range" min="4" max="15" class="slider" v-model="value" />
-    <h2 id="slider-value">{{ value }}</h2>
+  <div class="q-pa-md slider-container">
+    <label class="slider" for="slider">Length: {{ length }}</label>
+    <q-slider id="slider" v-model="length" :min="4" :max="15" />
   </div>
 </template>
 
 <style>
-.inputcontainer {
-  display: flex;
-  justify-content: left;
+.slider-container {
+  max-width: 30%;
+  font-size: 2rem;
+  margin: 2rem;
 }
-
-.slider-heading {
-  font-size: 24px;
-  padding: 2rem;
-}
-
 .slider {
-  width: 30%;
+  font-size: 2rem;
 }
 </style>
 
 <script lang="ts">
+import { ref } from 'vue';
+
 export default {
-  data() {
-    return { value: 8 };
+  setup() {
+    return {
+      length: ref(4),
+    };
   },
 };
 </script>
