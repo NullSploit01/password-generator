@@ -7,9 +7,7 @@
 
 <style>
 .checkbox-container {
-  max-width: 30%;
   font-size: 2rem;
-  margin: 2rem;
 }
 
 .label {
@@ -22,11 +20,15 @@
 import { ref } from 'vue';
 
 export default {
+  props: {
+    label: String,
+    default: Boolean,
+  },
+
   setup() {
     return {
-      val: ref(true),
+      val: ref('false'),
     };
   },
-  props: ['label'],
 };
 </script>

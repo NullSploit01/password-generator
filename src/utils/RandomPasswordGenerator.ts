@@ -3,7 +3,7 @@ export function PasswordGenerator(
   isAlpha: Boolean = true,
   isNumeric: Boolean = true,
   specialChars: Boolean = false
-): String {
+): string {
   let password = '';
   let possible = isAlpha
     ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'

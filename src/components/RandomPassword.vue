@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h2>
+    <h3>
       Random Password For You:
       <span>{{ randomPassword }}</span>
-    </h2>
+    </h3>
   </div>
 </template>
 

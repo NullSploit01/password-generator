@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="heading-container">
-      <h1 class="heading">{{ heading }}</h1>
+      <h2 class="heading">{{ heading }}</h2>
     </div>
   </div>
 </template>
@@ -21,9 +21,5 @@ export default {
 
 .heading-container {
   margin: 1rem;
-}
-
-.heading {
-  font-size: 2rem;
 }
 </style>

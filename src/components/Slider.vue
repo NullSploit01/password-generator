@@ -7,11 +7,6 @@
 
 <style>
 .slider-container {
-  max-width: 30%;
-  font-size: 2rem;
-  margin: 2rem;
-}
-.slider {
   font-size: 2rem;
 }
 </style>
@@ -22,7 +17,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     return {
-      length: ref(4),
+      length: ref(8),
     };
   },
 };
