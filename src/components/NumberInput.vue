@@ -6,6 +6,9 @@
       type="number"
       v-model="numberOfPasswords"
       label="Number Of Passwords"
+      :min="4"
+      :max="24"
+      :step="2"
     />
   </div>
 </template>
