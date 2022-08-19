@@ -1,9 +1,9 @@
-export function PasswordGenerator(
-  length: Number = 12,
-  isAlpha: Boolean = true,
-  isNumeric: Boolean = true,
-  specialChars: Boolean = false
-): string {
+function PasswordGenerator(
+  length = 12,
+  isAlpha = true,
+  isNumeric = true,
+  specialChars = false
+) {
   let password = '';
   let possible = isAlpha
     ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
@@ -16,3 +16,5 @@ export function PasswordGenerator(
 
   return password;
 }
+
+export { PasswordGenerator };

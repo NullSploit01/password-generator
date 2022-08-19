@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="js">
 import HeadingVue from '@/components/Heading.vue';
 import RandomPasswordVue from '@/components/RandomPassword.vue';
 import SliderVue from '@/components/Slider.vue';
@@ -18,14 +18,28 @@ export default {
   },
   data() {
     return {
-      passwords: [],
+      obj: {
+        passwords: [],
+        isNumeric: true,
+        specialChars: false,
+        length: 8,
+        numberOfPasswords: 24
+      },
+      random: ''
     };
+  },
+  mounted() {
+    this.random = PasswordGenerator()
+    console.log("");
   },
   methods: {
     PasswordGenerator,
     GeneratePasswords,
     create() {
-      this.passwords = GeneratePasswords();
+      this.obj.passwords = GeneratePasswords(this.obj);
+    },
+    handleInputChange({ name, value }) {
+      this.obj[name] = value;
     },
   },
 };
@@ -33,19 +47,39 @@ export default {
 
 <template>
   <HeadingVue heading="Password Generator" />
-  <RandomPasswordVue :randomPassword="PasswordGenerator()" />
+  <RandomPasswordVue :randomPassword="random" />
   <div class="parent-container">
     <div class="child-container">
-      <SliderVue />
-      <CheckBox :default="true" label="Numbers" />
-      <CheckBox :default="false" label="Special Characters" />
-      <NumberInput />
+      <label class="slider" for="slider">Length: {{ obj.length }}</label>
+
+      <SliderVue
+        @change="handleInputChange"
+        v-model="obj.length"
+        name="length"
+      />
+      <CheckBox
+        @change="handleInputChange"
+        v-model="obj.isNumeric"
+        name="isNumeric"
+        label="Numbers"
+      />
+      <CheckBox
+        name="specialChars"
+        v-model="obj.specialChars"
+        label="Special Characters"
+        @change="handleInputChange"
+      />
+      <NumberInput
+        @change="handleInputChange"
+        name="numberOfPasswords"
+        v-model="obj.numberOfPasswords"
+      />
       <div class="button-container">
         <q-btn color="secondary" @click="create" size="1rem" label="Generate" />
       </div>
     </div>
     <div class="child-container results">
-      <RenderPasswordsVue :passwords="passwords" />
+      <RenderPasswordsVue :passwords="obj.passwords" />
     </div>
   </div>
 </template>
@@ -73,5 +107,9 @@ export default {
 .results {
   text-align: center;
   padding: 3rem 0;
+}
+
+.slider {
+  font-size: 2rem;
 }
 </style>

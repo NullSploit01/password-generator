@@ -1,6 +1,12 @@
 <template>
   <div class="number">
-    <q-input dark type="number" v-model="number" label="Number Of Passwords" />
+    <q-input
+      dark
+      @update:model-value="(value: String) => $emit('change', {name, value})"
+      type="number"
+      v-model="numberOfPasswords"
+      label="Number Of Passwords"
+    />
   </div>
 </template>
 
@@ -13,14 +19,14 @@
 </style>
 
 <script lang="ts">
-import { ref } from 'vue';
-
 export default {
-  setup() {
+  data() {
     return {
-      number: ref(24),
+      numberOfPasswords: 24,
     };
   },
-  props: ['label'],
+  props: {
+    name: String,
+  },
 };
 </script>

@@ -1,7 +1,12 @@
 <template>
   <div class="q-pa-md checkbox-container">
     <label class="label">{{ label }}</label>
-    <q-checkbox v-model="val" size="3rem" color="secondary" />
+    <q-checkbox
+      @update:model-value="(value: String) => $emit('change', {name, value})"
+      v-model="check"
+      size="3rem"
+      color="secondary"
+    />
   </div>
 </template>
 
@@ -17,17 +22,15 @@
 </style>
 
 <script lang="ts">
-import { ref } from 'vue';
-
 export default {
   props: {
     label: String,
     default: Boolean,
+    name: String,
   },
-
-  setup() {
+  data() {
     return {
-      val: ref('false'),
+      check: false,
     };
   },
 };
