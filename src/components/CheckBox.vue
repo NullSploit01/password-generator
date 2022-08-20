@@ -6,6 +6,7 @@
       v-model="check"
       size="3rem"
       color="secondary"
+      dark
     />
   </div>
 </template>
