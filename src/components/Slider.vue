@@ -19,8 +19,14 @@
 <script lang="ts">
 export default {
   props: {
-    name: String,
-    length: Number,
+    name: {
+      type: String,
+      required: true,
+    },
+    length: {
+      type: Number,
+      required: false,
+    },
   },
 };
 </script>

@@ -5,6 +5,7 @@ export default {
   props: {
     passwords: {
       type: Array,
+      required: true,
     },
   },
   methods: {

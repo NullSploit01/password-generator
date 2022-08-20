@@ -8,7 +8,12 @@
 
 <script lang="ts">
 export default {
-  props: ['heading'],
+  props: {
+    heading: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
 
