@@ -1,0 +1,27 @@
+.parent-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.child-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 2rem;
+}
+
+.button-container {
+  font-size: 2rem;
+  margin: 3rem;
+  text-align: center;
+}
+
+.results {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.slider {
+  font-size: 2rem;
+}
