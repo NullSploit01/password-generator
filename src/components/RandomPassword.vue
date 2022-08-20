@@ -2,7 +2,7 @@
   <div class="container">
     <h3>
       Random Password For You:
-      <span>{{ randomPassword }}</span>
+      <span v-on:click="copy" class="cursor-pointer">{{ randomPassword }}</span>
     </h3>
   </div>
 </template>
@@ -15,8 +15,20 @@
 }
 </style>
 
-<script lang="ts">
+<script lang="js">
+import {Copy} from '../utils/CopyToClipboard'
+
 export default {
-  props: ['randomPassword'],
+  props: {
+    randomPassword: {
+      type: String,
+      required:true
+    }
+  },
+  methods: {
+    copy() {
+      Copy(this.randomPassword)
+    },
+  },
 };
 </script>

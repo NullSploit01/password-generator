@@ -1,8 +1,15 @@
 <script lang="ts">
+import { Copy } from '../utils/CopyToClipboard';
+
 export default {
   props: {
     passwords: {
       type: Array,
+    },
+  },
+  methods: {
+    copy(password: string) {
+      Copy(password);
     },
   },
 };
@@ -12,7 +19,9 @@ export default {
   <div class="rendered-passwords">
     <q-list dark>
       <q-item class="item" clickable v-for="password in passwords">
-        <q-item-section>{{ password }}</q-item-section>
+        <q-item-section v-on:click="copy(password)">{{
+          password
+        }}</q-item-section>
       </q-item>
     </q-list>
   </div>
