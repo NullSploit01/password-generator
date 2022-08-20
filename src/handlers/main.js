@@ -19,7 +19,7 @@ export default {
     return {
       obj: {
         passwords: [],
-        isNumeric: true,
+        isNumeric: false,
         specialChars: false,
         length: 8,
         numberOfPasswords: 24,
