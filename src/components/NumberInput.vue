@@ -9,6 +9,7 @@
       :min="4"
       :max="24"
       show-value
+      step="2"
     />
   </div>
 </template>
