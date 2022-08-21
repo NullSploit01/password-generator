@@ -13,6 +13,7 @@
 <style>
 .slider-container {
   font-size: 2rem;
+  margin-left: 1rem;
 }
 </style>
 

@@ -22,7 +22,7 @@ export default {
         isNumeric: false,
         specialChars: false,
         length: 8,
-        numberOfPasswords: 24,
+        numberOfPasswords: 18,
       },
       random: '',
     };
