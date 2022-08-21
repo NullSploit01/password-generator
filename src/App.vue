@@ -1,8 +1,12 @@
-<script setup lang="ts">
+<script lang="ts">
 import HomeViewVue from './views/HomeView.vue';
+export default {
+  components: {
+    HomeViewVue,
+  },
+};
 </script>
 
 <template>
-<HomeViewVue />
+  <HomeViewVue />
 </template>
-

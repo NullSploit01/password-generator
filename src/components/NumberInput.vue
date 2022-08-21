@@ -3,12 +3,20 @@
     <q-input
       dark
       @update:model-value="(value: String) => $emit('change', {name, value})"
-      type="number"
+      type="text"
       v-model="numberOfPasswords"
       label="Number Of Passwords"
       :min="4"
       :max="24"
       :step="2"
+      mask="##"
+      lazy-rules
+      :rules="[
+        (val: Number | String) =>
+          (val !== null && val != '') || 'Please Specify Number of Passwords!',
+        (val: Number | String) => 
+          (val > 3 && val < 25) || 'Please Enter a value between 4 & 24'
+      ]"
     />
   </div>
 </template>
