@@ -37,5 +37,8 @@
       <RenderPasswordsVue :passwords="obj.passwords" />
     </div>
   </div>
+  <footer>
+    <Footer />
+  </footer>
 </template>
 <script src="../handlers/main.js"></script>

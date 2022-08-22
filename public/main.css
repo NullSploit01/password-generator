@@ -25,3 +25,8 @@
 .slider {
   font-size: 2rem;
 }
+footer {
+  display: flex;
+  text-align: center;
+  padding: 1rem;
+}

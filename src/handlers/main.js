@@ -1,11 +1,12 @@
-import HeadingVue from '@/components/Heading.vue';
-import RandomPasswordVue from '@/components/RandomPassword.vue';
-import SliderVue from '@/components/Slider.vue';
-import { PasswordGenerator } from '../utils/RandomPasswordGenerator';
-import { GeneratePasswords } from '@/utils/GeneratePasswords';
-import CheckBox from '../components/CheckBox.vue';
-import RenderPasswordsVue from '@/components/RenderPasswords.vue';
-import NumberInput from '../components/NumberInput.vue';
+import HeadingVue from "@/components/Heading.vue";
+import RandomPasswordVue from "@/components/RandomPassword.vue";
+import SliderVue from "@/components/Slider.vue";
+import { PasswordGenerator } from "../utils/RandomPasswordGenerator";
+import { GeneratePasswords } from "@/utils/GeneratePasswords";
+import CheckBox from "../components/CheckBox.vue";
+import RenderPasswordsVue from "@/components/RenderPasswords.vue";
+import NumberInput from "../components/NumberInput.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   components: {
     HeadingVue,
@@ -14,6 +15,7 @@ export default {
     CheckBox,
     RenderPasswordsVue,
     NumberInput,
+    Footer,
   },
   data() {
     return {
@@ -24,12 +26,12 @@ export default {
         length: 8,
         numberOfPasswords: 18,
       },
-      random: '',
+      random: "",
     };
   },
   mounted() {
     this.random = PasswordGenerator();
-    console.log('');
+    console.log("");
   },
   methods: {
     PasswordGenerator,
